@@ -8,7 +8,7 @@
    3. Paste the event link below, e.g. "zainulabidin/consultation"
       or the full URL "https://cal.com/zainulabidin/consultation".
    ============================================================ */
-const BOOKING_LINK = "PASTE_CALCOM_LINK_HERE";
+const BOOKING_LINK = "https://cal.com/zainulabidin/consultation";
 
 /* Price is $50 per hour, charged pro rata. Sessions are capped at 60 minutes. */
 const HOURLY_RATE_USD = 50;
