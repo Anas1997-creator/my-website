@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="googled1934658a17ddea1" />
+  <meta name="google-site-verification" content="d1934658a17ddea1" />
+  <title>Turnitout Comprehensive User Manual & Technical Reference</title>
+  
+  <meta name="title" content="Turnitout Comprehensive User Manual & Technical Reference">
+  <meta name="description" content="The exhaustive user manual and technical reference for Turnitout. Complete documentation of all modules, transformation controls, citation generators, and code humanizers.">
+  <meta name="keywords" content="turnitout user manual, turnitout documentation, ai humanizer guide, advanced transformation settings, code comment humanizer, bibtex generator manual">
+  <meta name="author" content="Ahmad Hassan">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://ahmadhassan-bted.github.io/Turnitout-Humanizer/user-manual.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="TURNITOUT">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://ahmadhassan-bted.github.io/Turnitout-Humanizer/user-manual.html">
+  <meta property="og:title" content="Turnitout Comprehensive User Manual & Technical Reference">
+  <meta property="og:description" content="Exhaustive reference guide for every feature, toggle, slider, and workflow in the Turnitout ecosystem.">
+  <meta property="og:image" content="assets/logo-banner.svg">
+
+  <!-- Twitter Cards -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ahmadhassan-bted.github.io/Turnitout-Humanizer/user-manual.html">
+  <meta property="twitter:title" content="Turnitout Comprehensive User Manual">
+  <meta property="twitter:description" content="Exhaustive feature reference guide for students, researchers, and developers.">
+  <meta property="twitter:image" content="assets/logo-banner.svg">
+  <meta name="twitter:creator" content="@AhmadHassan_BT">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Manual & Technical Reference Styling */
+    .manual-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 32px;
+      align-items: start;
+      margin-top: 25px;
+    }
+    @media (max-width: 960px) {
+      .manual-layout {
+        grid-template-columns: 1fr;
+      }
+      .manual-toc {
+        position: static !important;
+        margin-bottom: 25px;
+      }
+    }
+    .manual-toc {
+      position: sticky;
+      top: 80px;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-rough);
+      border-radius: 8px;
+      padding: 20px 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+    }
+    .manual-toc-title {
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--ballpoint-blue);
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border-rough);
+      padding-bottom: 8px;
+    }
+    .manual-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+    .manual-toc li {
+      margin-bottom: 6px;
+    }
+    .manual-toc a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+      display: block;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .manual-toc a:hover {
+      color: var(--red-pen);
+      background: rgba(0,0,0,0.03);
+    }
+    .feature-card {
+      background: var(--bg-notebook);
+      border: 1px solid var(--border-rough);
+      border-radius: 8px;
+      padding: 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .feature-title {
+      font-family: var(--font-ui);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-ink);
+      margin-top: 0;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .feature-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .tag-blue { background: rgba(35, 72, 115, 0.12); color: var(--ballpoint-blue); }
+    .tag-green { background: rgba(35, 134, 54, 0.12); color: #238636; }
+    .tag-yellow { background: rgba(246, 216, 107, 0.25); color: #856404; }
+    .tag-red { background: rgba(186, 26, 50, 0.12); color: var(--red-pen); }
+    .ref-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      font-size: 14px;
+      font-family: var(--font-ui);
+    }
+    .ref-table th {
+      background: rgba(35, 72, 115, 0.08);
+      color: var(--text-ink);
+      font-weight: 700;
+      padding: 10px 12px;
+      border: 1px solid var(--border-rough);
+      text-align: left;
+    }
+    .ref-table td {
+      padding: 10px 12px;
+      border: 1px solid var(--border-rough);
+      color: var(--text-ink);
+      line-height: 1.5;
+    }
+    .ref-table tr:nth-child(even) td {
+      background: rgba(0, 0, 0, 0.02);
+    }
+    body.dark-mode .ref-table th {
+      background: rgba(255, 255, 255, 0.06);
+    }
+    body.dark-mode .ref-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .code-snippet {
+      background: #181715;
+      color: #ECE6DD;
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.5;
+      overflow-x: auto;
+      margin: 14px 0;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .knob-card {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-rough);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .knob-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border-rough);
+      padding-bottom: 10px;
+    }
+    .knob-title {
+      font-family: var(--font-ui);
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--ballpoint-blue);
+      margin: 0;
+    }
+    .knob-impact {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .impact-zero { background: rgba(35, 134, 54, 0.14); color: #238636; border: 1px solid rgba(35, 134, 54, 0.3); }
+    .impact-mod { background: rgba(35, 72, 115, 0.12); color: var(--ballpoint-blue); border: 1px solid rgba(35, 72, 115, 0.3); }
+    .impact-expand { background: rgba(186, 26, 50, 0.12); color: var(--red-pen); border: 1px solid rgba(186, 26, 50, 0.3); }
+    .example-container {
+      margin: 14px 0 10px 0;
+    }
+    .example-box {
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+    .example-before {
+      background: rgba(186, 26, 50, 0.04);
+      border: 1px solid rgba(186, 26, 50, 0.2);
+      border-left: 4px solid #BA1A32;
+    }
+    .example-after {
+      background: rgba(35, 134, 54, 0.05);
+      border: 1px solid rgba(35, 134, 54, 0.2);
+      border-left: 4px solid #238636;
+    }
+    .example-badge {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 4px;
+      display: inline-block;
+    }
+    .badge-orig { color: #BA1A32; }
+    .badge-trans { color: #238636; }
+    .diff-highlight {
+      background: rgba(35, 134, 54, 0.18);
+      color: #1b6329;
+      font-weight: 600;
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+    body.dark-mode .diff-highlight {
+      background: rgba(46, 160, 67, 0.25);
+      color: #7ee787;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-nav">
+    <a href="index.html" class="brand-wrapper" aria-label="TURNITOUT Home">
+      <img src="assets/logo.svg" alt="TURNITOUT" class="brand-logo-img">
+      <div class="brand-tagline"># Intelligent Similarity Evasion & Multi-Algorithm Checker</div>
+    </a>
+    <nav class="nav-links">
+      <a href="how-it-works.html" class="nav-link">How It Works</a>
+      <a href="user-manual.html" class="nav-link active">User Manual 📖</a>
+      <a href="api.html" class="nav-link" style="color: #FBBF24; font-weight: 700;">Enterprise API ⚡</a>
+      <a href="word-limit-guide.html" class="nav-link">Word Limit Guide</a>
+      <a href="changelog.html" class="nav-link">Changelog</a>
+      <a href="compare/quillbot-alternative.html" class="nav-link">vs QuillBot</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="index.html" class="theme-toggle-btn">← Back to Manifesto</a>
+      <a href="https://turnitout.streamlit.app/" target="_blank" rel="noopener noreferrer" class="app-launch-btn">
+        Launch Live App <svg class="icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="tape top-left"></div>
+    <div class="tape top-right"></div>
+
+    <article class="manifesto-card" style="max-width: 1200px;">
+      <div class="manifesto-header">
+        <h1 class="manifesto-title">
+          Turnitout <span class="highlight">User Manual & Technical Reference</span>
+        </h1>
+        <span class="stamp stamp-blue">OFFICIAL DOCUMENTATION</span>
+      </div>
+
+      <p class="manifesto-story">
+        Welcome to the authoritative user manual for <strong>Turnitout Core</strong>. 
+        This technical guide is designed for power users, researchers, and developers who want an exhaustive reference for every module, transformation knob, slider, document engine, and formatting safety guarantee in the application.
+      </p>
+
+      <div class="handwritten-aside">
+        "Turnitout operates as a strictly deterministic, zero-generative-AI linguistic transformation engine. Everything described in this manual operates in transient serverless RAM with zero disk persistence and zero content logging."
+      </div>
+
+      <div class="manual-layout">
+        
+        <!-- Table of Contents Sidebar -->
+        <aside class="manual-toc">
+          <div class="manual-toc-title">Table of Contents</div>
+          <ul>
+            <li><a href="#sec-1">1. System Architecture & Philosophy</a></li>
+            <li><a href="#sec-2">2. Plagiarism & AI Humanizer</a>
+              <ul style="padding-left: 12px; margin-top: 4px;">
+                <li><a href="#sec-2-1">2.1 Document Formats & Preservation</a></li>
+                <li><a href="#sec-2-2">2.2 Watermark & Unicode Purge</a></li>
+                <li><a href="#sec-2-3">2.3 Transformation Controls (14 Knobs)</a></li>
+                <li><a href="#sec-2-4">2.4 Protected Terms Whitelist</a></li>
+                <li><a href="#sec-2-5">2.5 Empirical Voice Matching</a></li>
+                <li><a href="#sec-2-6">2.6 Telemetry & Diff Breakdown</a></li>
+              </ul>
+            </li>
+            <li><a href="#sec-3">3. Code Comment Humanizer</a>
+              <ul style="padding-left: 12px; margin-top: 4px;">
+                <li><a href="#sec-3-1">3.1 AST Executable Code Safety</a></li>
+                <li><a href="#sec-3-2">3.2 Developer Skill Personas</a></li>
+                <li><a href="#sec-3-3">3.3 Docstring Conversion</a></li>
+              </ul>
+            </li>
+            <li><a href="#sec-4">4. Citation Inserter & BIB Generator</a>
+              <ul style="padding-left: 12px; margin-top: 4px;">
+                <li><a href="#sec-4-1">4.1 Citation Density & Formats</a></li>
+                <li><a href="#sec-4-2">4.2 Discipline Taxonomies</a></li>
+                <li><a href="#sec-4-3">4.3 AI Auto-Fill BibTeX Schema</a></li>
+              </ul>
+            </li>
+            <li><a href="#sec-5">5. AI Pattern & Signature Checker</a></li>
+            <li><a href="#sec-6">6. Pairwise Document Similarity</a></li>
+            <li><a href="#sec-7">7. High-Availability Cluster Protocol</a></li>
+            <li><a href="#sec-8">8. Power-User FAQ & Troubleshooting</a></li>
+          </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="manual-content">
+
+          <!-- Section 1 -->
+          <section id="sec-1" style="margin-bottom: 45px;">
+            <h2 class="section-heading">1. System Architecture & Deterministic Philosophy</h2>
+            <p style="font-size: 15.5px; line-height: 1.7; color: var(--text-muted);">
+              Conventional commercial AI rewriters (QuillBot, Undetectable AI, StealthGPT) route text through third-party Large Language Models (LLMs). This introduces three fatal flaws for academic and professional documents:
+            </p>
+            <ol style="font-size: 15px; line-height: 1.7; color: var(--text-ink); margin-left: 20px; margin-bottom: 20px;">
+              <li><strong>Factual Hallucinations:</strong> Generative models randomly invent statistics, dates, citation numbers, and theorem claims.</li>
+              <li><strong>Secondary AI Fingerprints:</strong> LLM output inherently exhibits low mathematical perplexity and uniform sentence length, frequently triggering detectors like Turnitin AI and CopyLeaks anew.</li>
+              <li><strong>Formatting Destruction:</strong> Plaintext LLM wrappers obliterate complex Word XML styles, LaTeX math environments, tables, equations, and code indentation.</li>
+            </ol>
+            <p style="font-size: 15.5px; line-height: 1.7; color: var(--text-muted);">
+              <strong>The Turnitout Paradigm (Black-Box Guarantee):</strong> Turnitout uses <em>zero generative AI</em>. It functions as a deterministic linguistic transformation pipeline. Input text passes through structured syntactic parsing, contextual synonym realignment, n-gram chain disruption, and discourse connective rotation. All facts, equations, numerical values, and document layouts remain mathematically sealed.
+            </p>
+          </section>
+
+          <!-- Section 2 -->
+          <section id="sec-2" style="margin-bottom: 45px;">
+            <h2 class="section-heading">2. Core Module: Plagiarism & AI Humanizer</h2>
+            <p style="font-size: 15.5px; line-height: 1.7; color: var(--text-muted); margin-bottom: 20px;">
+              The primary humanization workspace provides dual operating modes: direct prose entry and multi-format document ingestion.
+            </p>
+
+            <!-- 2.1 Formats -->
+            <div id="sec-2-1" class="feature-card">
+              <div class="feature-title">
+                <span>2.1 In-Place Document Parsing &amp; Layout Preservation</span>
+              </div>
+              <div class="feature-meta">
+                <span class="tag tag-blue">Word (.docx)</span>
+                <span class="tag tag-blue">Excel (.xlsx / .csv)</span>
+                <span class="tag tag-blue">LaTeX (.tex)</span>
+                <span class="tag tag-blue">Markdown (.md)</span>
+                <span class="tag tag-blue">Plain Text (.txt)</span>
+                <span class="tag tag-blue">Code (.py)</span>
+                <span class="tag tag-green">Batch ZIP Archives</span>
+              </div>
+              <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 12px;">
+                Unlike converters that flatten documents to plain text, Turnitout operates directly on document Abstract Syntax Trees and XML run streams:
+              </p>
+              <ul style="font-size: 14px; line-height: 1.6; color: var(--text-ink); margin-left: 20px;">
+                <li><strong>Microsoft Word (<code>.docx</code>):</strong> Traverses <code>w:p</code> (paragraphs) and modifies only inner <code>w:t</code> text runs. Formatting runs (bold, italic, font face, text highlighting, paragraph alignment, headers, footers, tables, and drawing objects) remain untouched.</li>
+                <li><strong>Excel Spreadsheets (<code>.xlsx</code> / <code>.csv</code>):</strong> Iterates through tabular text cells and comments, humanizing prose while preserving cell formulas, numbers, dates, and column structures intact.</li>
+                <li><strong>LaTeX (<code>.tex</code>):</strong> Isolates natural language body prose while mathematically protecting math modes (<code>$...$</code>, <code>\[...\]</code>), environments (<code>\begin{equation}</code>, <code>align</code>, <code>matrix</code>), citation anchors (<code>\cite{...}</code>), and document preambles.</li>
+                <li><strong>Source Code (<code>.py</code>, etc.):</strong> Extracts and humanizes only natural language docstrings and comments, keeping all executable code statements, variables, and AST logic 100% operational.</li>
+                <li><strong>Batch ZIP Processing:</strong> Upload archives containing multiple documents or codebases. Turnitout processes each file in-memory and delivers a bundled ZIP export (<code>Turnitout_Humanized_Docs_&lt;TIMESTAMP&gt;.zip</code>) preserving relative path hierarchies.</li>
+              </ul>
+            </div>
+
+            <!-- 2.2 Watermark & Unicode -->
+            <div id="sec-2-2" class="feature-card">
+              <div class="feature-title">
+                <span>2.2 Watermark, Hidden Unicode &amp; Metadata Scrubbing</span>
+              </div>
+              <div class="feature-meta">
+                <span class="tag tag-red">Anti-Tracking</span>
+                <span class="tag tag-yellow">EU AI Act Compliance</span>
+                <span class="tag tag-green">Automatic</span>
+              </div>
+              <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 12px;">
+                Turnitout automatically scrubs modern tracking footprints embedded by generative AI providers to comply with watermarking regulations:
+              </p>
+              <table class="ref-table">
+                <thead>
+                  <tr>
+                    <th>Tracking Mechanism</th>
+                    <th>How Providers Inject It</th>
+                    <th>Turnitout Functional Outcome</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Zero-Width Unicode Spaces</strong></td>
+                    <td>Hidden characters (<code>U+200B</code>, <code>U+200C</code>, <code>U+200D</code>, <code>U+2060</code>) inserted between words as steganographic watermarks.</td>
+                    <td>Deep regex character scrubbing detects and purges all invisible zero-width code points without altering visible spacing.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>C2PA Manifest Metadata</strong></td>
+                    <td>Provenance manifests embedded in Office and PDF document packages indicating AI generation origins.</td>
+                    <td>Document packaging streams are sanitized upon export, wiping internal generation markers from file history.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>LLM Cliché Signatures</strong></td>
+                    <td>High-frequency AI marker phrases (e.g. <em>"delve into"</em>, <em>"pivotal role"</em>, <em>"testament to"</em>, <em>"tapestry"</em>) and em-dashes (<code>—</code>).</td>
+                    <td>Targeted catalog disruption identifies cliché n-grams and substitutes natural, varied academic phrasing.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- 2.3 14 Knobs -->
+            <div id="sec-2-3" class="feature-card">
+              <div class="feature-title">
+                <span>2.3 Advanced Transformation Controls (The 14 Knobs)</span>
+              </div>
+              <div class="feature-meta">
+                <span class="tag tag-blue">Fine-Tuning</span>
+                <span class="tag tag-green">Interactive Controls</span>
+                <span class="tag tag-yellow">Live Output Previews</span>
+              </div>
+              <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 14px;">
+                Inside the expandable <strong>Advanced Transformation Settings &amp; Protected Terms</strong> panel, users can customize individual syntactic passes. Below is an exhaustive breakdown of every knob, including its functional role, word count impact, and live before/after output comparisons.
+              </p>
+
+              <!-- Knob 1 -->
+              <div class="knob-card">
+                <div class="knob-header">
+                  <h4 class="knob-title">1. Synonym Swapping (with Alignment Probability Slider)</h4>
+                  <span class="knob-impact impact-zero">Word Count Impact: 0 Words (1:1)</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                  <strong>What It Changes:</strong> Targets statistically predictable single words overrepresented in AI text and replaces them with contextually accurate, lower-frequency synonyms without adding extra tokens. 
+                  The <strong>Synonym Alignment Probability Slider</strong> (<code>0.50</code> to <code>1.00</code>) regulates semantic precision: <code>0.90 – 0.95</code> guarantees strict formal academic fidelity with zero semantic drift; <code>0.80 – 0.85</code> offers optimal natural flow; checking <em>Randomize Alignment</em> simulates human drafting variance.
+                </p>
+                <div class="example-container">
+                  <div class="example-box example-before">
+                    <span class="example-badge badge-orig">Original AI Input</span><br>
+                    "The algorithm demonstrates substantial efficacy in mitigating network latency across distributed clusters."
+                  </div>
+                  <div class="example-box example-after">
+                    <span class="example-badge badge-trans">Transformed Output (1:1 Swap)</span><br>
+                    "The algorithm shows <span class="diff-highlight">significant effectiveness</span> in <span class="diff-highlight">reducing</span> network <span class="diff-highlight">delay</span> across distributed clusters."
+                  </div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                  <strong>Recommendation:</strong> Always keep <span class="tag tag-green">ON</span>. This is the primary foundation for breaking AI n-grams while strictly maintaining 100% word-count neutrality.
+                </p>
+              </div>
+
+              <!-- Knob 2 -->
+              <div class="knob-card">
+                <div class="knob-header">
+                  <h4 class="knob-title">2. Phrase Rewriting</h4>
+                  <span class="knob-impact impact-mod">Word Count Impact: -2 to +1 Words</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                  <strong>What It Changes:</strong> Scans for hallmark multi-word AI clichés, formulaic transitional phrases, and boilerplate expressions, replacing them with direct, authentic human academic phrasing.
+                </p>
+                <div class="example-container">
+                  <div class="example-box example-before">
+                    <span class="example-badge badge-orig">Original AI Input</span><br>
+                    "In order to delve into the multifaceted dimensions of this phenomenon, it is of paramount importance to consider..."
+                  </div>
+                  <div class="example-box example-after">
+                    <span class="example-badge badge-trans">Transformed Output</span><br>
+                    "<span class="diff-highlight">To examine the various aspects</span> of this phenomenon, <span class="diff-highlight">one must consider</span>..."
+                  </div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                  <strong>Recommendation:</strong> Highly recommended <span class="tag tag-green">ON</span>. Strips recognizable AI patterns like <em>"delve into"</em>, <em>"multifaceted"</em>, and <em>"paramount importance"</em>.
+                </p>
+              </div>
+
+              <!-- Knob 3 -->
+              <div class="knob-card">
+                <div class="knob-header">
+                  <h4 class="knob-title">3. Determiner Swapping</h4>
+                  <span class="knob-impact impact-zero">Word Count Impact: 0 Words (1:1)</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                  <strong>What It Changes:</strong> Contextually alternates articles (<em>"the"</em>, <em>"a"</em>) and demonstratives (<em>"this"</em>, <em>"these"</em>, <em>"such"</em>). AI models frequently start almost every sentence with <em>"The [subject]"</em>; this pass creates organic grammatical diversity.
+                </p>
+                <div class="example-container">
+                  <div class="example-box example-before">
+                    <span class="example-badge badge-orig">Original AI Input</span><br>
+                    "The experiment validates the hypothesis. The results suggest the model generalizes well across the unseen test datasets."
+                  </div>
+                  <div class="example-box example-after">
+                    <span class="example-badge badge-trans">Transformed Output</span><br>
+                    "<span class="diff-highlight">This</span> experiment validates the hypothesis. <span class="diff-highlight">These</span> results suggest the model generalizes well across <span class="diff-highlight">such</span> unseen test datasets."
+                  </div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                  <strong>Recommendation:</strong> Keep <span class="tag tag-green">ON</span>. Eliminates repetitive sentence openings with exact 1-to-1 word count preservation.
+                </p>
+              </div>
+
+              <!-- Knob 4 -->
+              <div class="knob-card">
+                <div class="knob-header">
+                  <h4 class="knob-title">4. Voice Transformations (Active ↔ Passive)</h4>
+                  <span class="knob-impact impact-mod">Word Count Impact: ± 1 to 3 Words</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                  <strong>What It Changes:</strong> Converts rigid passive constructions into dynamic active voice, or converts repetitive active statements into scholarly passive constructions where objective agency is preferred.
+                </p>
+                <div class="example-container">
+                  <div class="example-box example-before">
+                    <span class="example-badge badge-orig">Original AI Input (Rigid Passive)</span><br>
+                    "A novel optimization framework was engineered by the research group to accelerate gradient descent."
+                  </div>
+                  <div class="example-box example-after">
+                    <span class="example-badge badge-trans">Transformed Output (Dynamic Active)</span><br>
+                    "<span class="diff-highlight">The research group engineered</span> a novel optimization framework to accelerate gradient descent."
+                  </div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                  <strong>Recommendation:</strong> Keep <span class="tag tag-green">ON</span> for standard humanization. Elevates stylistic burstiness.
+                </p>
+              </div>
+
+              <!-- Knob 5 -->
+              <div class="knob-card">
+                <div class="knob-header">
+                  <h4 class="knob-title">5. Sentence Fusion</h4>
+                  <span class="knob-impact impact-mod">Word Count Impact: +1 to 3 Words</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                  <strong>What It Changes:</strong> Merges adjacent short, staccato sentences into cohesive compound or complex sentences using appropriate coordinating or subordinating conjunctions.
+                </p>
+                <div class="example-container">
+                  <div class="example-box example-before">
+                    <span class="example-badge badge-orig">Original AI Input (Choppy Staccato)</span><br>
+                    "The dataset contains 50,000 samples. The training process required 12 hours. The final validation loss was minimal."
+                  </div>
+                  <div class="example-box example-after">
+                    <span class="example-badge badge-trans">Transformed Output (Fused Compound)</span><br>
+                    "The dataset contains 50,000 samples, <span class="diff-highlight">and while training required 12 hours</span>, the final validation loss remained minimal."
+                  </div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                  <strong>Recommendation:</strong> Enable for fragmented AI drafts. Disable if targeting a strict exact word count limit.
+                </p>
+              </div>
+
+              <!-- Knob 6 -->
+              <div class="knob-card">
+                <div class="knob-header">
+                  <h4 class="knob-title">6. Transition Injection</h4>
+                  <span class="knob-impact impact-expand">Word Count Impact: +2 to 4 Words / Sentence</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                  <strong>What It Changes:</strong> Injects authentic scholarly discourse markers and transitional signposts (e.g., <em>"Furthermore"</em>, <em>"In contrast"</em>, <em>"Consequently"</em>, <em>"To this end"</em>) to enhance flow.
+                </p>
+                <div class="example-container">
+                  <div class="example-box example-before">
+                    <span class="example-badge badge-orig">Original AI Input</span><br>
+                    "The baseline model struggled with long-range dependencies. The attention-augmented architecture maintained high accuracy."
+                  </div>
+                  <div class="example-box example-after">
+                    <span class="example-badge badge-trans">Transformed Output</span><br>
+                    "The baseline model struggled with long-range dependencies. <span class="diff-highlight">In contrast</span>, the attention-augmented architecture maintained high accuracy."
+                  </div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                  <strong>Recommendation:</strong> Excellent for essays and literature reviews. <span class="tag tag-red">DISABLE</span> if you have a rigid word limit ceiling.
+                </p>
+              </div>
+
+              <!-- Knob 7 -->
+              <div class="knob-card">
+                <div class="knob-header">
+                  <h4 class="knob-title">7. Clause &amp; Word Reorder</h4>
+                  <span class="knob-impact impact-zero">Word Count Impact: 0 Words (1:1)</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                  <strong>What It Changes:</strong> Reorders dependent clauses, adverbials, and prepositional adjuncts to natural alternative positions without altering semantic meaning or document length.
+                </p>
+                <div class="example-container">
+                  <div class="example-box example-before">
+                    <span class="example-badge badge-orig">Original AI Input</span><br>
+                    "The model achieves superior convergence speeds when evaluated on GPU clusters."
+                  </div>
+                  <div class="example-box example-after">
+                    <span class="example-badge badge-trans">Transformed Output</span><br>
+                    "<span class="diff-highlight">When evaluated on GPU clusters</span>, the model achieves superior convergence speeds."
+                  </div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                  <strong>Recommendation:</strong> Always keep <span class="tag tag-green">ON</span>. Radically disrupts predictable sequence starts with zero word count inflation.
+                </p>
+              </div>
+
+              <!-- Knob 8 -->
+              <div class="knob-card">
+                <div class="knob-header">
+                  <h4 class="knob-title">8. Nominalization / Verbalization</h4>
+                  <span class="knob-impact impact-mod">Word Count Impact: ± 1 to 2 Words</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                  <strong>What It Changes:</strong> Alternates between direct action verbs and abstract nominal forms (e.g., <em>"analyze"</em> ↔ <em>"conduct an analysis of"</em>, <em>"measure"</em> ↔ <em>"perform a measurement of"</em>).
+                </p>
+                <div class="example-container">
+                  <div class="example-box example-before">
+                    <span class="example-badge badge-orig">Original AI Input</span><br>
+                    "We systematically measured the latency variances across all worker nodes."
+                  </div>
+                  <div class="example-box example-after">
+                    <span class="example-badge badge-trans">Transformed Output</span><br>
+                    "We <span class="diff-highlight">conducted a systematic measurement of</span> latency variances across all worker nodes."
+                  </div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                  <strong>Recommendation:</strong> Keep <span class="tag tag-green">ON</span> for formal scientific manuscripts and academic theses.
+                </p>
+              </div>
+
+              <!-- Knob 9 -->
+              <div class="knob-card">
+                <div class="knob-header">
+                  <h4 class="knob-title">9. Appositive Insertion</h4>
+                  <span class="knob-impact impact-expand">Word Count Impact: +5 to 15 Words / Instance</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                  <strong>What It Changes:</strong> Inserts clarifying parentheticals, informative noun phrases, or acronym definitions directly alongside subjects, replicating authentic human explanatory prose.
+                </p>
+                <div class="example-container">
+                  <div class="example-box example-before">
+                    <span class="example-badge badge-orig">Original AI Input</span><br>
+                    "We evaluated BERT on the SQuAD benchmark."
+                  </div>
+                  <div class="example-box example-after">
+                    <span class="example-badge badge-trans">Transformed Output</span><br>
+                    "We evaluated BERT<span class="diff-highlight">, a transformer-based language representation model,</span> on the SQuAD benchmark."
+                  </div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                  <strong>Recommendation:</strong> Excellent for deep explanatory papers. <span class="tag tag-red">DISABLE</span> if you are bound by a strict word limit ceiling.
+                </p>
+              </div>
+
+              <!-- Knob 10 -->
+              <div class="knob-card">
+                <div class="knob-header">
+                  <h4 class="knob-title">10. Discourse Rotation</h4>
+                  <span class="knob-impact impact-mod">Word Count Impact: 0 to +2 Words</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                  <strong>What It Changes:</strong> Rotates macro-connectives and paragraph openers according to discourse tree taxonomies, preventing adjacent paragraphs from opening with identical rhetorical words.
+                </p>
+                <div class="example-container">
+                  <div class="example-box example-before">
+                    <span class="example-badge badge-orig">Original AI Input (Repetitive Connectors)</span><br>
+                    Paragraph 1: "Moreover, the system minimizes query overhead."<br>
+                    Paragraph 2: "Moreover, the cache structure improves latency."
+                  </div>
+                  <div class="example-box example-after">
+                    <span class="example-badge badge-trans">Transformed Output (Rotated Diversity)</span><br>
+                    Paragraph 1: "Moreover, the system minimizes query overhead."<br>
+                    Paragraph 2: "<span class="diff-highlight">Concurrently</span>, the cache structure improves latency."
+                  </div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                  <strong>Recommendation:</strong> Essential for multi-page documents, research reports, and dissertations.
+                </p>
+              </div>
+
+              <!-- Knob 11 -->
+              <div class="knob-card">
+                <div class="knob-header">
+                  <h4 class="knob-title">11. Contractions Swapping</h4>
+                  <span class="knob-impact impact-mod">Word Count Impact: +1 Word / Expansion</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                  <strong>What It Changes:</strong> In academic presets, expands informal contractions into rigorous formal pairs (e.g., <em>"don't"</em> ➔ <em>"do not"</em>, <em>"can't"</em> ➔ <em>"cannot"</em>). In casual mode, contracts them for natural dialogue.
+                </p>
+                <div class="example-container">
+                  <div class="example-box example-before">
+                    <span class="example-badge badge-orig">Original AI Input (Informal Contractions)</span><br>
+                    "It's evident that the pipeline didn't encounter memory fragmentation."
+                  </div>
+                  <div class="example-box example-after">
+                    <span class="example-badge badge-trans">Transformed Output (Academic Standard)</span><br>
+                    "<span class="diff-highlight">It is</span> evident that the pipeline <span class="diff-highlight">did not</span> encounter memory fragmentation."
+                  </div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                  <strong>Recommendation:</strong> Turn on for formal academic submissions.
+                </p>
+              </div>
+
+              <!-- Knob 12 -->
+              <div class="knob-card">
+                <div class="knob-header">
+                  <h4 class="knob-title">12. N-Gram Chain Breaking</h4>
+                  <span class="knob-impact impact-zero">Word Count Impact: 0 to ±1 Word</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                  <strong>What It Changes:</strong> Audits surviving 5-gram token chains against precomputed statistical AI sequences and applies targeted micro-adjustments to shatter hash fingerprints checked by Turnitin and GPTZero.
+                </p>
+                <div class="example-container">
+                  <div class="example-box example-before">
+                    <span class="example-badge badge-orig">Original AI Input (Predictable 8-Gram Chain)</span><br>
+                    "...serves as a testament to the remarkable capabilities of modern deep learning..."
+                  </div>
+                  <div class="example-box example-after">
+                    <span class="example-badge badge-trans">Transformed Output (Shattered Sequence)</span><br>
+                    "...<span class="diff-highlight">highlights the notable performance and capabilities</span> of modern deep learning..."
+                  </div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                  <strong>Recommendation:</strong> Always keep <span class="tag tag-green">ON</span>. Critical defense against Winnowing and hash fingerprint algorithms.
+                </p>
+              </div>
+
+              <!-- Knob 13 -->
+              <div class="knob-card">
+                <div class="knob-header">
+                  <h4 class="knob-title">13. Conceptual Bridging</h4>
+                  <span class="knob-impact impact-expand">Word Count Impact: +10 to 25 Words / Paragraph</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                  <strong>What It Changes:</strong> Analyzes conceptual relationships between adjacent paragraphs and generates an introductory thematic bridge to smoothly link disparate arguments.
+                </p>
+                <div class="example-container">
+                  <div class="example-box example-before">
+                    <span class="example-badge badge-orig">Original AI Input (Abrupt Transition)</span><br>
+                    [End of Para 1]: "...concluding our evaluation of loss functions."<br>
+                    [Start of Para 2]: "Distributed training requires specialized hardware."
+                  </div>
+                  <div class="example-box example-after">
+                    <span class="example-badge badge-trans">Transformed Output (Smooth Thematic Bridge)</span><br>
+                    [Start of Para 2]: "<span class="diff-highlight">Building upon these loss function dynamics</span>, distributed training necessitates specialized hardware..."
+                  </div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                  <strong>Recommendation:</strong> Use for capstone theses and research manuscripts requiring high thematic narrative cohesion. <span class="tag tag-red">DISABLE</span> for strict word limits.
+                </p>
+              </div>
+
+              <!-- Knob 14 -->
+              <div class="knob-card">
+                <div class="knob-header">
+                  <h4 class="knob-title">14. Information Reordering</h4>
+                  <span class="knob-impact impact-zero">Word Count Impact: 0 Words (1:1)</span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                  <strong>What It Changes:</strong> Reorders sentence clauses according to the linguistic "given-before-new" principle, placing foundational context at the start and reserving the climax for key conclusions.
+                </p>
+                <div class="example-container">
+                  <div class="example-box example-before">
+                    <span class="example-badge badge-orig">Original AI Input</span><br>
+                    "Substantial throughput gains emerged when the engineers parallelized the pipeline."
+                  </div>
+                  <div class="example-box example-after">
+                    <span class="example-badge badge-trans">Transformed Output</span><br>
+                    "<span class="diff-highlight">When the engineers parallelized the pipeline</span>, substantial throughput gains emerged."
+                  </div>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                  <strong>Recommendation:</strong> Keep <span class="tag tag-green">ON</span>. Optimizes reader emphasis and sentence cadence with zero word count inflation.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- 2.4 Protected Terms -->
+            <div id="sec-2-4" class="feature-card">
+              <div class="feature-title">
+                <span>2.4 Custom Protected Terms (Synonym Exclusion Blacklist)</span>
+              </div>
+              <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 12px;">
+                Certain technical terminology, trademarked product names, chemical formulas, or variable names must never be substituted. The Protected Terms system ensures these strings remain 100% untouched.
+              </p>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 15px 0;">
+                <div style="background: var(--bg-card-alt); padding: 14px; border-radius: 6px; border: 1px solid var(--border-rough);">
+                  <strong style="font-size: 13.5px; font-family: var(--font-ui);">Method A: Manual Text Entry</strong>
+                  <p style="font-size: 13px; color: var(--text-muted); margin: 6px 0 0 0;">
+                    Type comma-separated terms into the text field:
+                    <br><code style="font-size: 12px; background: rgba(0,0,0,0.05); padding: 2px 4px; border-radius: 3px;">CRISPR-Cas9, TensorFlow, O(N log N), React</code>
+                  </p>
+                </div>
+                <div style="background: var(--bg-card-alt); padding: 14px; border-radius: 6px; border: 1px solid var(--border-rough);">
+                  <strong style="font-size: 13.5px; font-family: var(--font-ui);">Method B: JSON File Upload</strong>
+                  <p style="font-size: 13px; color: var(--text-muted); margin: 6px 0 0 0;">
+                    Upload a <code>.json</code> list or object. Valid schemas:
+                    <br><code style="font-size: 12px; background: rgba(0,0,0,0.05); padding: 2px 4px; border-radius: 3px;">["term1", "term2"]</code> or <code style="font-size: 12px; background: rgba(0,0,0,0.05); padding: 2px 4px; border-radius: 3px;">{"words": [...]}</code>
+                  </p>
+                </div>
+              </div>
+              <div class="example-container">
+                <div class="example-box example-before">
+                  <span class="example-badge badge-orig">Original AI Input</span><br>
+                  "We initialized the AdamW optimizer with a learning rate of 0.001 to train the BioBERT architecture on our custom clinical dataset."
+                </div>
+                <div class="example-box example-after">
+                  <span class="example-badge badge-trans">Transformed Output (Protected: AdamW, BioBERT, learning rate)</span><br>
+                  "We <span class="diff-highlight">configured</span> the <strong>AdamW</strong> optimizer with a <strong>learning rate</strong> of 0.001 to <span class="diff-highlight">fine-tune</span> the <strong>BioBERT</strong> architecture on our custom clinical dataset."
+                </div>
+              </div>
+            </div>
+
+            <!-- 2.5 Voice Matching -->
+            <div id="sec-2-5" class="feature-card">
+              <div class="feature-title">
+                <span>2.5 Empirical Voice Matching (Beta)</span>
+              </div>
+              <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                When writing high-stakes submissions, tone consistency is vital. The <strong>Empirical Voice Matching</strong> engine calibrates transformation parameters to match an author's historical writing sample:
+              </p>
+              <ul style="font-size: 14px; line-height: 1.6; color: var(--text-ink); margin-left: 20px;">
+                <li>Upload an authentic past essay, published paper, or code documentation sample (100+ words).</li>
+                <li>The engine analyzes stylistic heuristics: sentence length distribution, clause depth, contraction preferences, and lexical formality.</li>
+                <li>Transformation probabilities are dynamically calibrated so the resulting output matches your authentic authorial cadence.</li>
+              </ul>
+              <div class="example-container">
+                <div class="example-box example-before">
+                  <span class="example-badge badge-orig">Generic AI Output (Without Voice Calibration)</span><br>
+                  "Furthermore, it is of paramount importance to recognize that the dataset presents multifaceted challenges regarding class imbalance."
+                </div>
+                <div class="example-box example-after">
+                  <span class="example-badge badge-trans">Voice-Calibrated Output (Mimicking Direct Author Style)</span><br>
+                  "Crucially, <span class="diff-highlight">the dataset presents substantial challenges regarding class imbalance</span>."
+                </div>
+              </div>
+            </div>
+
+            <!-- 2.6 Telemetry -->
+            <div id="sec-2-6" class="feature-card">
+              <div class="feature-title">
+                <span>2.6 Telemetry &amp; Transformation Breakdown</span>
+              </div>
+              <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                Upon completing humanization, open the <strong>Telemetry &amp; Transformation Breakdown</strong> expander to inspect performance metrics:
+              </p>
+              <ul style="font-size: 14px; line-height: 1.6; color: var(--text-ink); margin-left: 20px;">
+                <li><strong>Word Count Delta:</strong> Exact before &amp; after word count comparison to ensure compliance with length boundaries.</li>
+                <li><strong>Transformation Intensity:</strong> Total number of lexical replacements, clause reorderings, and discourse shifts applied.</li>
+                <li><strong>Interactive Diff Viewer:</strong> Color-coded side-by-side comparison highlighting all modified spans for rapid verification.</li>
+              </ul>
+            </div>
+
+          </section>
+
+          <!-- Section 3 -->
+          <section id="sec-3" style="margin-bottom: 45px;">
+            <h2 class="section-heading">3. Core Module: Code Comment &amp; Docstring Humanizer</h2>
+            <p style="font-size: 15.5px; line-height: 1.7; color: var(--text-muted); margin-bottom: 20px;">
+              Designed for computer science students, software engineers, and researchers submitting programming assignments.
+            </p>
+
+            <div id="sec-3-1" class="feature-card">
+              <div class="feature-title">
+                <span>3.1 AST String-Aware Comment Isolation (100% Executable Safety)</span>
+              </div>
+              <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 12px;">
+                The single most dangerous failure of generic rewriters on source code is altering syntax, variable names, or string literals. 
+                Turnitout features a string-aware tokenizer that tracks quote contexts (single quotes, double quotes, escape sequences) to isolate only natural language comment tokens:
+              </p>
+              <div class="code-snippet">
+<span style="color: #6A9955;"># ONLY comments like this are rewritten</span>
+<span style="color: #569CD6;">def</span> <span style="color: #DCDCAA;">calculate_loss</span>(y_true, y_pred):
+    <span style="color: #CE9178;">"String literals 'like this' are strictly untouched"</span>
+    <span style="color: #C586C0;">return</span> np.mean((y_true - y_pred) ** <span style="color: #B5CEA8;">2</span>)
+              </div>
+              <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted);">
+                Supported languages: Python, R, JavaScript, TypeScript, Java, C, C++, C#, Go, Rust, PHP, Swift, Kotlin, Bash/Shell, SQL, and HTML/CSS/XML.
+              </p>
+            </div>
+
+            <div id="sec-3-2" class="feature-card">
+              <div class="feature-title">
+                <span>3.2 Developer Skill Personas</span>
+              </div>
+              <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                Match comment vocabulary to your intended developer seniority level:
+              </p>
+              <ul style="font-size: 14px; line-height: 1.6; color: var(--text-ink); margin-left: 20px;">
+                <li><strong>Beginner Developer:</strong> Uses simple, everyday conversational terminology (e.g., <em>"checks if list is empty"</em>, <em>"loops through numbers"</em>).</li>
+                <li><strong>Intermediate Developer:</strong> Standard industry working English (e.g., <em>"validates container boundary"</em>, <em>"iterates across dataset"</em>).</li>
+                <li><strong>Senior Architect / Expert:</strong> High-density technical jargon (e.g., <em>"evaluates invariant constraint"</em>, <em>"executes sequential traversal"</em>).</li>
+              </ul>
+            </div>
+
+            <div id="sec-3-3" class="feature-card">
+              <div class="feature-title">
+                <span>3.3 Docstring Conversion</span>
+              </div>
+              <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted);">
+                Generative AI tools (ChatGPT, GitHub Copilot) frequently generate verbose triple-quoted docstrings (<code>""" ... """</code>). 
+                Enabling <strong>Convert AI Docstrings &rarr; Human '#' Comments</strong> automatically refactors multi-line docstring blocks into natural, concise line-by-line developer comments.
+              </p>
+            </div>
+          </section>
+
+          <!-- Section 4 -->
+          <section id="sec-4" style="margin-bottom: 45px;">
+            <h2 class="section-heading">4. Core Module: Citation Inserter &amp; BibTeX Generator</h2>
+            <p style="font-size: 15.5px; line-height: 1.7; color: var(--text-muted); margin-bottom: 20px;">
+              Academic papers require verifiable citations. The Citation Inserter provides contextual reference insertion and automated bibliography package generation.
+            </p>
+
+            <div id="sec-4-1" class="feature-card">
+              <div class="feature-title">
+                <span>4.1 Citation Formats &amp; Contextual Placement</span>
+              </div>
+              <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 12px;">
+                Turnitout detects high-salience claim sentences in your manuscript and anchors citations where scholarly references are standard.
+              </p>
+              <ul style="font-size: 14px; line-height: 1.6; color: var(--text-ink); margin-left: 20px;">
+                <li><strong>IEEE Format:</strong> Sequential numeric anchors (e.g., <code>[1]</code>, <code>[2]</code>, <code>[3]</code>).</li>
+                <li><strong>APA Format:</strong> Author-year markers (e.g., <code>(Vaswani et al., 2017)</code>).</li>
+                <li><strong>LaTeX Format:</strong> Exact citation macros (e.g., <code>\cite{vaswani2017attention}</code>).</li>
+              </ul>
+            </div>
+
+            <div id="sec-4-2" class="feature-card">
+              <div class="feature-title">
+                <span>4.2 Five Academic Taxonomies</span>
+              </div>
+              <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 10px;">
+                Select your academic discipline or use <strong>Auto-Detect Field</strong>:
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0;">
+                <span class="tag tag-blue">Computer Science &amp; AI</span>
+                <span class="tag tag-blue">Engineering &amp; Physics</span>
+                <span class="tag tag-blue">Mathematics &amp; Statistics</span>
+                <span class="tag tag-blue">Quantitative Finance</span>
+                <span class="tag tag-blue">Medical &amp; Life Sciences</span>
+              </div>
+            </div>
+
+            <div id="sec-4-3" class="feature-card">
+              <div class="feature-title">
+                <span>4.3 Self-Executing AI Auto-Fill BibTeX Schema</span>
+              </div>
+              <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin-bottom: 12px;">
+                When you download the generated <code>citations.bib</code> file, it includes an integrated prompt header. 
+                Instead of searching Google Scholar manually for DOIs:
+              </p>
+              <ol style="font-size: 14px; line-height: 1.6; color: var(--text-ink); margin-left: 20px;">
+                <li>Click <strong>Download BibTeX (.bib)</strong> or copy its content.</li>
+                <li>Paste the raw text directly into ChatGPT, Claude, or Gemini.</li>
+                <li>The embedded header instructs the AI to fill each citation key with <strong>real, peer-reviewed papers, authors, and DOIs</strong> matching your field while strictly retaining the exact citation keys in your paper.</li>
+              </ol>
+            </div>
+          </section>
+
+          <!-- Section 5 -->
+          <section id="sec-5" style="margin-bottom: 45px;">
+            <h2 class="section-heading">5. Core Module: AI Pattern &amp; Signature Checker</h2>
+            <p style="font-size: 15.5px; line-height: 1.7; color: var(--text-muted); margin-bottom: 15px;">
+              Modeled after QuillBot and ZeroGPT diagnostic dashboards, this tool allows local verification before submission:
+            </p>
+            <div class="feature-card">
+              <ul style="font-size: 14.5px; line-height: 1.7; color: var(--text-ink); margin-left: 20px;">
+                <li><strong>ZipPy Entropic Perplexity:</strong> Analyzes compression entropy ratios across contiguous text chunks. AI text compresses unnaturally well due to repetitive token probabilities; human drafting produces high entropy.</li>
+                <li><strong>Composite Risk Percentage:</strong> Overall probability gauge (0% to 100%) showing overall detection likelihood.</li>
+                <li><strong>Trilateral Breakdown:</strong> Separates text into <strong>AI-Generated</strong>, <strong>AI-Refined</strong>, and <strong>Human-Written</strong> percentages.</li>
+                <li><strong>Interactive Highlighting:</strong> Low-entropy spans are highlighted in amber/yellow for immediate manual review.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Section 6 -->
+          <section id="sec-6" style="margin-bottom: 45px;">
+            <h2 class="section-heading">6. Core Module: Pairwise Document Similarity</h2>
+            <p style="font-size: 15.5px; line-height: 1.7; color: var(--text-muted); margin-bottom: 15px;">
+              Designed for instructors, researchers, and students verifying version overlap between two separate manuscripts (Document A vs Document B):
+            </p>
+            <div class="feature-card">
+              <ul style="font-size: 14.5px; line-height: 1.7; color: var(--text-ink); margin-left: 20px;">
+                <li><strong>Multi-Pass Cross-Audit:</strong> Simultaneously computes 5-gram overlap, Winnowing fingerprint similarity, Cosine TF-IDF, and Longest Common Subsequence (LCS).</li>
+                <li><strong>Plagiarism Risk Index:</strong> Instant categorization into <strong>Low</strong>, <strong>Moderate</strong>, or <strong>High Risk</strong> overlap.</li>
+                <li><strong>Side-by-Side Span Matching:</strong> Displays matching passages in synchronized scroll windows.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Section 7 -->
+          <section id="sec-7" style="margin-bottom: 45px;">
+            <h2 class="section-heading">7. High-Availability Cluster Protocol &amp; Privacy</h2>
+            <p style="font-size: 15.5px; line-height: 1.7; color: var(--text-muted); margin-bottom: 15px;">
+              To prevent server resource exhaustion and bypass Streamlit Cloud rate limits during peak academic exam seasons, Turnitout operates across an <strong>8-node distributed cluster</strong>:
+            </p>
+            <div class="feature-card">
+              <table class="ref-table">
+                <thead>
+                  <tr>
+                    <th>Cluster Node</th>
+                    <th>Live URL</th>
+                    <th>Operational Purpose</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Server Node 1–7</strong></td>
+                    <td><code>turnitout1.streamlit.app</code> ... <code>turnitout7.streamlit.app</code></td>
+                    <td>High-speed dedicated evasion worker mirrors handling ~90% of global traffic.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Main Server (Heart)</strong></td>
+                    <td><code>turnitout.streamlit.app</code></td>
+                    <td>Resilient cluster anchor, OAuth gateway, and fallback node.</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="callout-box" style="margin-top: 15px;">
+                <strong>100% In-Memory Privacy Guarantee:</strong>
+                All document parsing, AST traversal, and text humanization execute in transient server RAM. Files are never written to physical disk, never logged to relational databases, and never retained for model training. Once your session ends, all document data dissolves.
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 8 -->
+          <section id="sec-8" style="margin-bottom: 45px;">
+            <h2 class="section-heading">8. Power-User FAQ &amp; Quick Troubleshooting</h2>
+            
+            <div class="feature-card">
+              <h3 style="font-size: 16px; margin-top: 0; color: var(--ballpoint-blue);">Q: My transformed document grew in word count. How do I lock it to 0 added words?</h3>
+              <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted);">
+                Open <strong>Advanced Transformation Settings &amp; Protected Terms</strong>. Keep <strong>Synonym Swapping</strong> enabled (slider at <code>0.85 – 0.90</code>), and turn <strong>OFF</strong> <em>Transition Injection</em>, <em>Appositive Insertion</em>, and <em>Conceptual Bridging</em>. The engine will perform strict 1:1 substitutions with 0 net words added. Read the dedicated <a href="word-limit-guide.html">Word Limit Guide</a> for full details.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <h3 style="font-size: 16px; margin-top: 0; color: var(--ballpoint-blue);">Q: Does Turnitout modify formulas, citations, or figure captions in LaTeX?</h3>
+              <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted);">
+                No. Turnitout's LaTeX parser strictly protects all math environments (<code>$...$</code>, <code>\[...\]</code>, <code>equation</code>, <code>align</code>), macros (<code>\cite{...}</code>, <code>\ref{...}</code>), tabular columns, and preambles. Only natural prose paragraphs receive linguistic realignment.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <h3 style="font-size: 16px; margin-top: 0; color: var(--ballpoint-blue);">Q: How do I report a bug or request a custom academic discipline taxonomy?</h3>
+              <p style="font-size: 14px; line-height: 1.6; color: var(--text-muted);">
+                Use the in-app <strong>Feature Request &amp; Bug Reporter</strong> in the sidebar, chat directly with developer Ahmad Hassan on WhatsApp at <a href="https://wa.me/923225522383" target="_blank" rel="noopener noreferrer"><strong>+92 322 5522383</strong></a>, or submit a <a href="https://github.com/AhmadHassan-BTed/Turnitout-Humanizer/issues/new" target="_blank" rel="noopener noreferrer">GitHub Issue</a>.
+              </p>
+            </div>
+          </section>
+
+          <!-- Launch CTA Card -->
+          <div style="background: var(--bg-card-alt); border: 1px solid var(--border-rough); border-radius: 8px; padding: 26px; text-align: center; margin-top: 30px;">
+            <h3 style="margin-top: 0; font-family: var(--font-ui); color: var(--ballpoint-blue);">
+              Ready to Experience the Engine?
+            </h3>
+            <p style="font-size: 15px; color: var(--text-muted); max-width: 650px; margin: 0 auto 20px auto; line-height: 1.6;">
+              Test your documents and code with complete privacy across all 8 live cluster nodes.
+            </p>
+            <a href="https://turnitout.streamlit.app/" target="_blank" rel="noopener noreferrer" class="app-launch-btn" style="font-size: 16px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px;">
+              Launch Live Application <svg class="icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <footer class="footer-section">
+      <p>TURNITOUT — Built by students, for students. Deterministic, zero-generative-AI linguistic engineering.</p>
+    </footer>
+  </main>
+
+  <script src="cluster-balancer.js"></script>
+</body>
+</html>
