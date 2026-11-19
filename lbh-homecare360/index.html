@@ -429,8 +429,8 @@ document.getElementById("svcGrid").innerHTML=SERVICES.map(s=>`<div class="svc"><
 
 /* photo rows — LBH project photos already used on the HomeCare360 site */
 const P=["hero-linden-lane.jpg","card-linden-lane-198.jpg","wittmer-court-kitchen.jpg","home-exterior.jpg","linden-lane-178.jpg"];
-const R1=[["drop","Plumbing",0,"center"],["zap","Electrical",2,"center"],["roller","Paint & drywall",4,"center"],["sun","Seasonal care",3,"center"],["wifi","Smart home",1,"center"],["clip","Maintenance",0,"60% 40%"],["window","Doors & windows",2,"30% 50%"],["shield","Warranty help",4,"70% 50%"]];
-const R2=[["monitor","Mounting & install",3,"center"],["window","Windows",1,"center"],["sun","Gutters & exterior",3,"20% 50%"],["clip","Home check-ups",4,"40% 50%"],["zap","Lighting",0,"30% 30%"],["drop","Kitchen & bath",2,"70% 50%"],["roller","Touch-ups",1,"60% 50%"],["wifi","Wi-Fi & smart",4,"20% 50%"]];
+const R1=[["drop","Plumbing",0,"center"],["sun","Seasonal & exterior",1,"center"],["roller","Paint & drywall",4,"center"],["monitor","Mounting & install",3,"center"],["zap","Electrical",2,"center"],["window","Windows",1,"25% 50%"],["window","Doors & hardware",4,"75% 50%"],["wifi","Smart home & Wi-Fi",3,"60% 50%"]];
+const R2=[["drop","Kitchen & bath",2,"60% 50%"],["sun","Gutters & exterior",1,"70% 50%"],["zap","Lighting",4,"30% 30%"],["wifi","Smart home",3,"20% 50%"],["clip","General maintenance",0,"60% 40%"],["clip","Home check-ups",1,"50% 60%"],["roller","Touch-ups",4,"60% 60%"],["shield","Warranty help",3,"80% 50%"]];
 const tile=t=>`<div class="tile"><img src="${IMG+P[t[2]]}" alt="" loading="lazy" style="object-position:${t[3]}"><div class="cap">${ic(t[0])}${t[1]}</div></div>`;
 const fill=(id,arr)=>{const h=arr.map(tile).join("");document.getElementById(id).innerHTML=h+h;};
 fill("row1",R1);fill("row2",R2);
